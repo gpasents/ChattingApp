@@ -1,5 +1,6 @@
 package com.example.chattingapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,16 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         val already = findViewById<TextView>(R.id.already)
         already.setOnClickListener {
-            setContentView(R.layout.activity_login)
 
-            val loginButton = findViewById<Button>(R.id.loginButton)
-            loginButton.setOnClickListener {
-                val login_email = findViewById<TextView>(R.id.loginEmail)
-                val login_password = findViewById<TextView>(R.id.loginPassword)
-
-                Log.d("mainactivity2",  login_email.text.toString() + login_password.text.toString())
-
-            }
+            val intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
         }
 
 
